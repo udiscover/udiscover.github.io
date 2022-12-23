@@ -1,8 +1,6 @@
 /**
  * WEBSITE: https://dvision.academy
- * TWITTER: https://twitter.com/datavisionacademy
  * FACEBOOK: https://www.facebook.com/datavisionacademy
- * GITHUB: https://github.com/datavisionacademy/
  */
 
 (function ($) {
