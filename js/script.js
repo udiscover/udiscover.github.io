@@ -140,3 +140,37 @@ async function retrievePerson() {
 		alert(`Failed to retrieve the object, with error code: ${error.message}`);
 	}
 }
+
+//Save support
+async function saveNewSupport() {
+	if (document.getElementById("name").value != null && document.getElementById("name").value != '') {
+		if (document.getElementById("mail").value != null && document.getElementById("mail").value != '') {
+			if (document.getElementById("subject").value != null && document.getElementById("subject").value != '') {
+				if (document.getElementById("message").value != null && document.getElementById("message").value != '') {
+					const support = new Parse.Object("Support");
+					support.set("name", document.getElementById("name").value);
+					support.set("email", document.getElementById("mail").value);
+					support.set("subject", document.getElementById("subject").value);
+					support.set("message", document.getElementById("message").value);
+					try {
+						let result = await support.save()
+						console.log('New support created with objectId: ' + result.id);
+					} catch (error) {
+						console.log('Failed to save new support, with error code: ' + error.message);
+					}
+				} else {
+					console.log('No message entered, with error code: ');
+				}
+			}
+			else {
+				console.log('No subject entered, with error code: ');
+			}
+		}
+		else {
+			console.log('No Email Id entered, with error code: ');
+		}
+	}
+	else {
+		console.log('No name entered, with error code: ');
+	}
+}
