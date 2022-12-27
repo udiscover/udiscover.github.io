@@ -107,3 +107,36 @@
 	});
 
 })(jQuery);
+
+//Save Subscribers
+async function saveNewPerson() {
+	if (document.getElementById("newsletter").value != null && document.getElementById("newsletter").value != '') {
+		const person = new Parse.Object("Person");
+
+		person.set("email", document.getElementById("newsletter").value);
+		try {
+			let result = await person.save()
+			console.log('New subscriber created with objectId: ' + result.id);
+		} catch (error) {
+			console.log('Failed to save new subscriber, with error code: ' + error.message);
+		}
+	} else {
+		console.log('No Email id entered, with error code: ');
+	}
+
+}
+
+//Get subscribers
+async function retrievePerson() {
+	const query = new Parse.Query("Person");
+
+	try {
+		const person = await query.get("");
+		const name = person.get("name");
+		const age = person.get("age");
+
+		alert(`Name: ${name} age: ${age}`);
+	} catch (error) {
+		alert(`Failed to retrieve the object, with error code: ${error.message}`);
+	}
+}
