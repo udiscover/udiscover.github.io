@@ -174,3 +174,42 @@ async function saveNewSupport() {
 		console.log('No name entered, with error code: ');
 	}
 }
+
+//Save application
+async function saveNewApplication() {
+	if (document.getElementById("name").value != null && document.getElementById("name").value != '') {
+		if (document.getElementById("email").value != null && document.getElementById("email").value != '') {
+			if (document.getElementById("contact").value != null && document.getElementById("contact").value != '') {
+				if (document.getElementById("country").value != null && document.getElementById("country").value != '') {
+					if (document.getElementById("course").value != null && document.getElementById("course").value != '') {
+						const application = new Parse.Object("Application");
+						application.set("name", document.getElementById("name").value);
+						application.set("email", document.getElementById("email").value);
+						application.set("contact", document.getElementById("contact").value);
+						application.set("country", document.getElementById("country").value);
+						application.set("course", document.getElementById("course").value);
+						try {
+							let result = await application.save()
+							console.log('New application created with objectId: ' + result.id);
+						} catch (error) {
+							console.log('Failed to save new application, with error code: ' + error.message);
+						}
+					} else {
+						console.log('No course entered, with error code: ');
+					}
+				}
+				else {
+					console.log('No country entered, with error code: ');
+				}
+			} else {
+				console.log('No contact entered, with error code: ');
+			}
+		}
+		else {
+			console.log('No Email Id entered, with error code: ');
+		}
+	}
+	else {
+		console.log('No name entered, with error code: ');
+	}
+}
