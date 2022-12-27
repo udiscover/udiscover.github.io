@@ -50,6 +50,11 @@
     gtag('js', new Date());
     gtag('config', 'G-ZQRZD8HMS1');
   </script>
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+  <script>
+    Parse.initialize("FFwfpakW6LbSCYAdeNhcahhO6G3kToc0vzqdlh3T", "kd5Xq3mwhXPQuV84Y7LwaC7u2zvdDROE3hvXGb5M");
+    Parse.serverURL = "https://parseapi.back4app.com/";
+  </script>
 </head>
 
 <body>
@@ -280,11 +285,12 @@
         <div class="row">
           <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
             <h3 class="text-white">Subscribe Now</h3>
-            <form action="#">
+            <form>
               <div class="input-wrapper">
                 <input type="email" class="form-control border-0" id="newsletter" name="newsletter"
                   placeholder="Enter Your Email...">
-                <button type="submit" value="send" class="btn btn-primary">Join</button>
+                <!--button type="submit" value="send" class="btn btn-primary">Join</button-->
+                <button onclick="saveNewPerson()" class="btn btn-primary">Join</button>
               </div>
             </form>
           </div>

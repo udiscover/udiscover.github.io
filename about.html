@@ -17,7 +17,8 @@
   <!-- Mobile Specific Metas
 	================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Learn and harness the power of data science through various data science tools and technologies">
+  <meta name="description"
+    content="Learn and harness the power of data science through various data science tools and technologies">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Data Vision Academy">
   <meta name="generator" content="Data Vision Academy HTML Template v1.0">
@@ -49,6 +50,11 @@
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-ZQRZD8HMS1');
+  </script>
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+  <script>
+    Parse.initialize("FFwfpakW6LbSCYAdeNhcahhO6G3kToc0vzqdlh3T", "kd5Xq3mwhXPQuV84Y7LwaC7u2zvdDROE3hvXGb5M");
+    Parse.serverURL = "https://parseapi.back4app.com/";
   </script>
 </head>
 
@@ -223,7 +229,8 @@
             <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="index.html">Home</a></li>
             <li class="list-inline-item text-white h3 font-secondary nasted">About Us</li>
           </ul>
-          <p class="text-lighten mb-0">We offer a uniquely curated course for Tableau and Power BI to make you stand apart in the world of data science. 
+          <p class="text-lighten mb-0">We offer a uniquely curated course for Tableau and Power BI to make you stand
+            apart in the world of data science.
             Our courses are uniquely designed to be on top of the latest market demands and trends in data science.</p>
         </div>
       </div>
@@ -238,9 +245,13 @@
         <div class="col-12">
           <img class="img-fluid w-100 mb-4" src="images/about/about-page.jpg" alt="about image">
           <h2 class="section-title">ABOUT OUR JOURNEY</h2>
-          <p>A uniquely curated course for Tableau and Power BI to make you stand apart in the world of data science.</p>
-          <p>Data is the new fuel of digital world. Understanding data, making meaningful information out of it, verify anomalies, predict the next, accuracy of data has all become very important.</p>
-          <p>Data Vision Academy is on a mission to make data science be the next day to day topic for everyone. Our goal is to make you well versed in various popular tools and technology of data science irrespective of your educational background and location.</p>
+          <p>A uniquely curated course for Tableau and Power BI to make you stand apart in the world of data science.
+          </p>
+          <p>Data is the new fuel of digital world. Understanding data, making meaningful information out of it, verify
+            anomalies, predict the next, accuracy of data has all become very important.</p>
+          <p>Data Vision Academy is on a mission to make data science be the next day to day topic for everyone. Our
+            goal is to make you well versed in various popular tools and technology of data science irrespective of your
+            educational background and location.</p>
           <p>We’re 100% remote with teammates spanning in India and USA.</p>
         </div>
       </div>
@@ -324,12 +335,12 @@
               <div class="d-flex justify-content-between">
                 <span>Teacher</span>
                 <ul class="list-inline">
-                  <li class="list-inline-item"><a class="text-color" target="_blank" href="https://www.facebook.com/manzar.noori"><i
-                        class="ti-facebook"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" target="_blank" href="https://www.instagram.com/noorimanzar/"><i
-                        class="ti-instagram"></i></a></li>
-                  <li class="list-inline-item"><a class="text-color" target="_blank" href="https://www.linkedin.com/in/manzar-imam-noori-901b2937"><i
-                        class="ti-linkedin"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" target="_blank"
+                      href="https://www.facebook.com/manzar.noori"><i class="ti-facebook"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" target="_blank"
+                      href="https://www.instagram.com/noorimanzar/"><i class="ti-instagram"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" target="_blank"
+                      href="https://www.linkedin.com/in/manzar-imam-noori-901b2937"><i class="ti-linkedin"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -388,11 +399,12 @@
         <div class="row">
           <div class="col-md-9 ml-auto bg-primary py-5 newsletter-block">
             <h3 class="text-white">Subscribe Now</h3>
-            <form action="#">
+            <form>
               <div class="input-wrapper">
                 <input type="email" class="form-control border-0" id="newsletter" name="newsletter"
                   placeholder="Enter Your Email...">
-                <button type="submit" value="send" class="btn btn-primary">Join</button>
+                <!--button type="submit" value="send" class="btn btn-primary">Join</button-->
+                <button onclick="saveNewPerson()" class="btn btn-primary">Join</button>
               </div>
             </form>
           </div>
@@ -410,7 +422,8 @@
               <li class="mb-2">Kolkata, West Bengal, India</li>
               <li class="mb-2">+91 99401 21076</li>
               <li class="mb-2">contactus@dvision.academy</li>
-              <li class="mb-2">Follow Us on <a href="https://www.linkedin.com/company/datavisionacademy/" target="_blank">Linkedin</a></li>
+              <li class="mb-2">Follow Us on <a href="https://www.linkedin.com/company/datavisionacademy/"
+                  target="_blank">Linkedin</a></li>
             </ul>
           </div>
           <!-- company -->
@@ -471,12 +484,13 @@
           </div>
           <div class="col-sm-5 text-sm-right text-center">
             <ul class="list-inline">
-              <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/datavisionacademy"><i
-                    class="ti-facebook text-primary"></i></a></li>
+              <li class="list-inline-item"><a class="d-inline-block p-2"
+                  href="https://www.facebook.com/datavisionacademy"><i class="ti-facebook text-primary"></i></a></li>
               <li class="list-inline-item"><a class="d-inline-block p-2" href="https://instagram.com/"><i
                     class="ti-instagram text-primary"></i></a></li>
-                    <li class="list-inline-item"><a class="d-inline-block p-2" target="_blank" href="https://www.linkedin.com/company/datavisionacademy/"><i
-                      class="ti-linkedin text-primary"></i></a></li>
+              <li class="list-inline-item"><a class="d-inline-block p-2" target="_blank"
+                  href="https://www.linkedin.com/company/datavisionacademy/"><i
+                    class="ti-linkedin text-primary"></i></a></li>
             </ul>
           </div>
         </div>
