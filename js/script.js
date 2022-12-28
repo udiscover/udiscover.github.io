@@ -239,3 +239,66 @@ async function saveNewApplication() {
 		document.getElementById("response").innerHTML = 'No name entered';
 	}
 }
+
+//Save feedback
+async function saveNewFeedback() {
+	if (document.getElementById("name").value != null && document.getElementById("name").value != '') {
+		if (document.getElementById("mail").value != null && document.getElementById("mail").value != '') {
+			if (document.getElementById("contact").value != null && document.getElementById("contact").value != '') {
+				if (document.getElementById("country").value != null && document.getElementById("country").value != '') {
+					if (document.getElementById("course").value != null && document.getElementById("course").value != '') {
+						if (document.getElementById("rate").value != null && document.getElementById("rate").value != '') {
+							if (document.getElementById("feedback").value != null && document.getElementById("feedback").value != '') {
+								const feedback = new Parse.Object("Feedback");
+								feedback.set("name", document.getElementById("name").value);
+								feedback.set("mail", document.getElementById("mail").value);
+								feedback.set("contact", document.getElementById("contact").value);
+								feedback.set("country", document.getElementById("country").value);
+								feedback.set("course", document.getElementById("course").value);
+								feedback.set("rate", document.getElementById("rate").value);
+								feedback.set("feedback", document.getElementById("feedback").value);
+								try {
+									let result = await feedback.save()
+									console.log('New feedback created with objectId: ' + result.id);
+									document.getElementById("name").value = '';
+									document.getElementById("mail").value = '';
+									document.getElementById("contact").value = '';
+									document.getElementById("country").value = '';
+									document.getElementById("course").value = '';
+									document.getElementById("rate").value = '';
+									document.getElementById("feedback").value = '';
+									document.getElementById("response").innerHTML = 'Your feedback has been submitted. We appreciate you for these feedbacks.';
+								} catch (error) {
+									console.log('Failed to save new feedback, with error code: ' + error.message);
+									document.getElementById("response").innerHTML = 'The feedback could not be submitted';
+								}
+							} else {
+								console.log('No feedback entered, with error code: ');
+								document.getElementById("response").innerHTML = 'No feedback entered';
+							}
+						} else {
+							console.log('No rate entered, with error code: ');
+							document.getElementById("response").innerHTML = 'No rate entered';
+						}
+					} else {
+						console.log('No course entered, with error code: ');
+						document.getElementById("response").innerHTML = 'No course entered';
+					}
+				} else {
+					console.log('No country entered, with error code: ');
+					document.getElementById("response").innerHTML = 'No country entered';
+				}
+			} else {
+				console.log('No contact entered, with error code: ');
+				document.getElementById("response").innerHTML = 'No contact entered';
+			}
+		} else {
+			console.log('No Email Id entered, with error code: ');
+			document.getElementById("response").innerHTML = 'No email id entered';
+		}
+	}
+	else {
+		console.log('No name entered, with error code: ');
+		document.getElementById("response").innerHTML = 'No name entered';
+	}
+}
