@@ -107,7 +107,7 @@
               <li class="nav-item @@about">
                 <a class="nav-link" href="about.html">About</a>
               </li>
-              <li class="nav-item @@courses">
+              <li class="nav-item @@courses active">
                 <a class="nav-link" href="courses.html">COURSES</a>
               </li>
               <li class="nav-item @@events">
@@ -143,7 +143,7 @@
                 </li>
               </ul>
             </li-->
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="contact.html">CONTACT</a>
               </li>
             </ul>
@@ -248,11 +248,12 @@
         <div class="col-lg-7 mb-4 mb-lg-0">
           <form action="/contact.html" method="POST">
             <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name" required>
-            <input type="email" class="form-control mb-3" id="email" name="email" placeholder="Your Email" required>
+            <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email" required>
             <input type="text" class="form-control mb-3" id="contact" name="contact" placeholder="Contact" required>
             <input type="text" class="form-control mb-3" id="country" name="country" placeholder="Country" required>
             <input type="text" class="form-control mb-3" id="course" name="course" placeholder="Course" required>
             <button type="button" onclick="saveNewApplication()" class="btn btn-primary">Apply</button>
+            <p id="response"></p>
           </form>
         </div>
         <div class="col-lg-5">
@@ -291,6 +292,7 @@
                   placeholder="Enter Your Email...">
                 <!--button type="submit" value="send" class="btn btn-primary">Join</button-->
                 <button type="button" onclick="saveNewPerson()" class="btn btn-primary">Join</button>
+                <p id="response">Thanks for subscribining to our newsletter. We will get in touch with you soon. </p>
               </div>
             </form>
           </div>
