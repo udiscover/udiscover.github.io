@@ -135,11 +135,71 @@ async function retrievePerson() {
 	const query = new Parse.Query("Person");
 
 	try {
-		const person = await query.get("");
-		const name = person.get("name");
-		const age = person.get("age");
+		const person = await query.find();
+		$.each(person, function (r) {
+			$("#subscription").append("<tr><td>" + person[r].id + "</td><td>" + person[r].attributes.email + "</td><td>" + person[r].attributes.createdAt + "</td><td>" + person[r].attributes.updatedAt + "</td></tr>");
+		});
+	} catch (error) {
+		alert(`Failed to retrieve the object, with error code: ${error.message}`);
+	}
+}
 
-		alert(`Name: ${name} age: ${age}`);
+async function retrieveFeedback() {
+	const query = new Parse.Query("Feedback");
+	try {
+		const feedback = await query.find();
+		$.each(feedback, function (r) {
+			$("#feedback").append("<tr><td>" + feedback[r].id 
+			+ "</td><td>" + feedback[r].attributes.name 
+			+ "</td><td>" + feedback[r].attributes.mail 
+			+ "</td><td>" + feedback[r].attributes.contact 
+			+ "</td><td>" + feedback[r].attributes.country
+			+ "</td><td>" + feedback[r].attributes.course
+			+ "</td><td>" + feedback[r].attributes.createdAt
+			+ "</td><td>" + feedback[r].attributes.updatedAt
+			+ "</td><td>" + feedback[r].attributes.rate
+			+ "</td><td>" + feedback[r].attributes.feedback
+			+ "</td></tr>");
+		});
+	} catch (error) {
+		alert(`Failed to retrieve the object, with error code: ${error.message}`);
+	}
+}
+
+async function retrieveSupport() {
+	const query = new Parse.Query("Support");
+	try {
+		const support = await query.find();
+		$.each(support, function (r) {
+			$("#support").append("<tr><td>" + support[r].id 
+			+ "</td><td>" + support[r].attributes.name 
+			+ "</td><td>" + support[r].attributes.email 
+			+ "</td><td>" + support[r].attributes.subject 
+			+ "</td><td>" + support[r].attributes.createdAt 
+			+ "</td><td>" + support[r].attributes.updatedAt 
+			+ "</td><td>" + support[r].attributes.message 
+			+ "</td></tr>");
+		});
+	} catch (error) {
+		alert(`Failed to retrieve the object, with error code: ${error.message}`);
+	}
+}
+
+async function retrieveApplication() {
+	const query = new Parse.Query("Application");
+	try {
+		const application = await query.find();
+		$.each(application, function (r) {
+			$("#application").append("<tr><td>" + application[r].id 
+			+ "</td><td>" + application[r].attributes.name 
+			+ "</td><td>" + application[r].attributes.mail
+			+ "</td><td>" + application[r].attributes.contact
+			+ "</td><td>" + application[r].attributes.country   
+			+ "</td><td>" + application[r].attributes.createdAt 
+			+ "</td><td>" + application[r].attributes.updatedAt 
+			+ "</td><td>" + application[r].attributes.course 
+			+ "</td></tr>");
+		});
 	} catch (error) {
 		alert(`Failed to retrieve the object, with error code: ${error.message}`);
 	}
@@ -301,4 +361,11 @@ async function saveNewFeedback() {
 		console.log('No name entered, with error code: ');
 		document.getElementById("response").innerHTML = 'No name entered';
 	}
+}
+
+async function loadData() {
+	retrieveApplication();
+	retrievePerson();
+	retrieveSupport();
+	retrieveFeedback();
 }
