@@ -12,12 +12,13 @@
   <!-- Basic Page Needs
 	================================================== -->
   <meta charset="utf-8">
-  <title>Data Vision Academy - Application</title>
+  <title>Data Vision Academy - Tutorials</title>
 
   <!-- Mobile Specific Metas
 	================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Learn and harness the power of data science through various data science tools and technologies">
+  <meta name="description"
+    content="Learn and harness the power of data science through various data science tools and technologies">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Data Vision Academy">
   <meta name="generator" content="Data Vision Academy HTML Template v1.0">
@@ -107,16 +108,16 @@
               <li class="nav-item @@about">
                 <a class="nav-link" href="about.html">About</a>
               </li>
-              <li class="nav-item @@courses active">
+              <li class="nav-item @@courses">
                 <a class="nav-link" href="courses.html">COURSES</a>
               </li>
               <li class="nav-item @@events">
                 <a class="nav-link" href="events.html">EVENTS</a>
               </li>
-              <li class="nav-item @@tutorials">
-              <a class="nav-link" href="tutorials.html">TUTORIALS</a>
-            </li>
-            <!--li class="nav-item @@blog">
+              <li class="nav-item active">
+                <a class="nav-link" href="tutorials.html">TUTORIALS</a>
+              </li>
+              <!--li class="nav-item @@blog">
               <a class="nav-link" href="blog.html">BLOG</a>
             </li>li class="nav-item dropdown view">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -145,7 +146,7 @@
                 </li>
               </ul>
             </li-->
-              <li class="nav-item">
+              <li class="nav-item @@contact">
                 <a class="nav-link" href="contact.html">CONTACT</a>
               </li>
             </ul>
@@ -228,9 +229,10 @@
         <div class="col-md-8">
           <ul class="list-inline custom-breadcrumb mb-2">
             <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="index.html">Home</a></li>
-            <li class="list-inline-item text-white h3 font-secondary nasted">Apply Now</li>
+            <li class="list-inline-item text-white h3 font-secondary nasted">Our Tutorials</li>
           </ul>
-          <p class="text-lighten mb-0">We offer a uniquely curated course for Tableau and Power BI to make you stand apart in the world of data science. 
+          <p class="text-lighten mb-0">We offer a uniquely curated course for Tableau and Power BI to make you stand
+            apart in the world of data science.
             Our courses are uniquely designed to be on top of the latest market demands and trends in data science.</p>
         </div>
       </div>
@@ -238,47 +240,156 @@
   </section>
   <!-- /page title -->
 
-  <!-- contact -->
-  <section class="section bg-gray">
+  <!-- courses -->
+  <section class="section">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h2 class="section-title">Application</h2>
+      <!-- course list -->
+      <div class="row justify-content-center">
+        <!-- course item -->
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><a class="text-color" href="tutorials.html">Tableau</a></li>
+              </ul>
+              <a href="tutorials.html">
+                <h4 class="card-title">Donut Chart </h4>
+              </a>
+              <p class="card-text mb-4"> </p>
+              <a class="play-btn venobox" href="https://youtu.be/AlGKezIZB1k" data-vbtype="video">
+                <i class="ti-control-play"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/courses/course-1.jpg" alt="course thumb">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+
+                <li class="list-inline-item"><a class="text-color" href="tutorials.html">Tableau</a></li>
+              </ul>
+              <a href="tutorials.html">
+                <h4 class="card-title">CS 1 Basic Viz</h4>
+              </a>
+              <p class="card-text mb-4"> </p>
+              <a class="play-btn venobox" href="https://youtu.be/kmtf0YWSS3o" data-vbtype="video">
+                <i class="ti-control-play"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-7 mb-4 mb-lg-0">
-          <form action="/contact.html" method="POST">
-            <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name" required>
-            <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email" required>
-            <input type="text" class="form-control mb-3" id="contact" name="contact" placeholder="Contact" required>
-            <input type="text" class="form-control mb-3" id="country" name="country" placeholder="Country" required>
-            <input type="text" class="form-control mb-3" id="course" name="course" placeholder="Course" required>
-            <button type="button" onclick="saveNewApplication()" class="btn btn-primary">Apply</button>
-            <p id="response"></p>
-          </form>
+      <div class="row justify-content-center">
+        <!-- course item -->
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/courses/course-3.jpg" alt="course thumb">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><a class="text-color" href="tdfc.html">PowerBI</a></li>
+              </ul>
+              <a href="tdfc.html">
+                <h4 class="card-title">Basic Cleaning</h4>
+              </a>
+              <p class="card-text mb-4"> </p>
+              <a class="play-btn venobox" href="https://youtu.be/jCuYeuAJh38" data-vbtype="video">
+                <i class="ti-control-play"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-5">
-          <p class="mb-5">
-            We're just one click away to help you take the journey of data science tools and technology learning transforming you from great to incredible. 
-            Fill in the form to share your questions, topics and ofcourse suggestions. 
-            Or your favorite gum flavor. Either way, we’d love to talk.</p>
-          <a href="tel:+91 99401 21076" class="text-color h5 d-block">+91 99401 21076</a>
-          <a href="mailto:contactus@dvision.academy" class="mb-5 text-color h5 d-block">contactus@dvision.academy</a>
-          <p><b>Head Quarter:</b><br>Kolkata<br>West Bengal, India</p>
-          <p><b>Support Office:</b><br>San Diego<br>California, USA</p>
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/courses/course-3.jpg" alt="course thumb">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><a class="text-color" href="tutorials.html">PowerBI</a></li>
+              </ul>
+              <a href="tutorials.html">
+                <h4 class="card-title">Transformations</h4>
+              </a>
+              <p class="card-text mb-4"></p>
+              <a class="play-btn venobox" href="https://youtu.be/7EJNSDH-ubo" data-vbtype="video">
+                <i class="ti-control-play"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/courses/course-3.jpg" alt="course thumb">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><a class="text-color" href="tutorials.html">PowerBI</a></li>
+              </ul>
+              <a href="tutorials.html">
+                <h4 class="card-title">Dashboard and PBI Cloud</h4>
+              </a>
+              <p class="card-text mb-4"></p>
+              <a class="play-btn venobox" href="https://youtu.be/1-1Q1sTuPSg" data-vbtype="video">
+                <i class="ti-control-play"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/courses/course-3.jpg" alt="course thumb">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><a class="text-color" href="tutorials.html">PowerBI</a></li>
+              </ul>
+              <a href="tutorials.html">
+                <h4 class="card-title">Dynamic Columns</h4>
+              </a>
+              <p class="card-text mb-4"></p>
+              <a class="play-btn venobox" href="https://youtu.be/nPgg5UzQOYE" data-vbtype="video">
+                <i class="ti-control-play"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/courses/course-3.jpg" alt="course thumb">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><a class="text-color" href="tutorials.html">PowerBI</a></li>
+              </ul>
+              <a href="tutorials.html">
+                <h4 class="card-title">Date Type & Grouping Visuals</h4>
+              </a>
+              <p class="card-text mb-4"></p>
+              <a class="play-btn venobox" href="https://youtu.be/ixIwUXBHGNM" data-vbtype="video">
+                <i class="ti-control-play"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/courses/course-3.jpg" alt="course thumb">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><a class="text-color" href="tutorials.html">PowerBI</a></li>
+              </ul>
+              <a href="tutorials.html">
+                <h4 class="card-title">PowerBI vs Tableau Donut Chart</h4>
+              </a>
+              <p class="card-text mb-4"></p>
+              <a class="play-btn venobox" href="https://youtu.be/qCd0AOkEwAk" data-vbtype="video">
+                <i class="ti-control-play"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- /contact -->
-
-  <!-- gmap -->
-  <section class="section pt-0">
-    <!-- Google Map -->
-    <div id="map_canvas" data-latitude="51.507351" data-longitude="-0.127758"></div>
-  </section>
-  <!-- /gmap -->
+  <!-- /courses -->
 
   <!-- footer -->
   <footer>
@@ -312,7 +423,8 @@
               <li class="mb-2">Kolkata, West Bengal, India</li>
               <li class="mb-2">+91 99401 21076</li>
               <li class="mb-2">contactus@dvision.academy</li>
-              <li class="mb-2">Follow Us on <a href="https://www.linkedin.com/company/datavisionacademy/" target="_blank">Linkedin</a></li>
+              <li class="mb-2">Follow Us on <a href="https://www.linkedin.com/company/datavisionacademy/"
+                  target="_blank">Linkedin</a></li>
             </ul>
           </div>
           <!-- company -->
@@ -373,12 +485,13 @@
           </div>
           <div class="col-sm-5 text-sm-right text-center">
             <ul class="list-inline">
-              <li class="list-inline-item"><a class="d-inline-block p-2" target=_blank" href="https://facebook.com/datavisionacademy"><i
-                    class="ti-facebook text-primary"></i></a></li>
+              <li class="list-inline-item"><a class="d-inline-block p-2" target=_blank"
+                  href="https://facebook.com/datavisionacademy"><i class="ti-facebook text-primary"></i></a></li>
               <li class="list-inline-item"><a class="d-inline-block p-2" href="https://instagram.com/"><i
                     class="ti-instagram text-primary"></i></a></li>
-                    <li class="list-inline-item"><a class="d-inline-block p-2" target="_blank" href="https://www.linkedin.com/company/datavisionacademy/"><i
-                      class="ti-linkedin text-primary"></i></a></li>
+              <li class="list-inline-item"><a class="d-inline-block p-2" target="_blank"
+                  href="https://www.linkedin.com/company/datavisionacademy/"><i
+                    class="ti-linkedin text-primary"></i></a></li>
             </ul>
           </div>
         </div>
