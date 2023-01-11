@@ -149,17 +149,17 @@ async function retrieveFeedback() {
 	try {
 		const feedback = await query.find();
 		$.each(feedback, function (r) {
-			$("#feedback").append("<tr><td>" + feedback[r].id 
-			+ "</td><td>" + feedback[r].attributes.name 
-			+ "</td><td>" + feedback[r].attributes.mail 
-			+ "</td><td>" + feedback[r].attributes.contact 
-			+ "</td><td>" + feedback[r].attributes.country
-			+ "</td><td>" + feedback[r].attributes.course
-			+ "</td><td>" + feedback[r].attributes.createdAt
-			+ "</td><td>" + feedback[r].attributes.updatedAt
-			+ "</td><td>" + feedback[r].attributes.rate
-			+ "</td><td>" + feedback[r].attributes.feedback
-			+ "</td></tr>");
+			$("#feedback").append("<tr><td>" + feedback[r].id
+				+ "</td><td>" + feedback[r].attributes.name
+				+ "</td><td>" + feedback[r].attributes.mail
+				+ "</td><td>" + feedback[r].attributes.contact
+				+ "</td><td>" + feedback[r].attributes.country
+				+ "</td><td>" + feedback[r].attributes.course
+				+ "</td><td>" + feedback[r].attributes.createdAt
+				+ "</td><td>" + feedback[r].attributes.updatedAt
+				+ "</td><td>" + feedback[r].attributes.rate
+				+ "</td><td>" + feedback[r].attributes.feedback
+				+ "</td></tr>");
 		});
 	} catch (error) {
 		alert(`Failed to retrieve the object, with error code: ${error.message}`);
@@ -171,14 +171,14 @@ async function retrieveSupport() {
 	try {
 		const support = await query.find();
 		$.each(support, function (r) {
-			$("#support").append("<tr><td>" + support[r].id 
-			+ "</td><td>" + support[r].attributes.name 
-			+ "</td><td>" + support[r].attributes.email 
-			+ "</td><td>" + support[r].attributes.subject 
-			+ "</td><td>" + support[r].attributes.createdAt 
-			+ "</td><td>" + support[r].attributes.updatedAt 
-			+ "</td><td>" + support[r].attributes.message 
-			+ "</td></tr>");
+			$("#support").append("<tr><td>" + support[r].id
+				+ "</td><td>" + support[r].attributes.name
+				+ "</td><td>" + support[r].attributes.email
+				+ "</td><td>" + support[r].attributes.subject
+				+ "</td><td>" + support[r].attributes.createdAt
+				+ "</td><td>" + support[r].attributes.updatedAt
+				+ "</td><td>" + support[r].attributes.message
+				+ "</td></tr>");
 		});
 	} catch (error) {
 		alert(`Failed to retrieve the object, with error code: ${error.message}`);
@@ -190,15 +190,15 @@ async function retrieveApplication() {
 	try {
 		const application = await query.find();
 		$.each(application, function (r) {
-			$("#application").append("<tr><td>" + application[r].id 
-			+ "</td><td>" + application[r].attributes.name 
-			+ "</td><td>" + application[r].attributes.mail
-			+ "</td><td>" + application[r].attributes.contact
-			+ "</td><td>" + application[r].attributes.country   
-			+ "</td><td>" + application[r].attributes.createdAt 
-			+ "</td><td>" + application[r].attributes.updatedAt 
-			+ "</td><td>" + application[r].attributes.course 
-			+ "</td></tr>");
+			$("#application").append("<tr><td>" + application[r].id
+				+ "</td><td>" + application[r].attributes.name
+				+ "</td><td>" + application[r].attributes.mail
+				+ "</td><td>" + application[r].attributes.contact
+				+ "</td><td>" + application[r].attributes.country
+				+ "</td><td>" + application[r].attributes.createdAt
+				+ "</td><td>" + application[r].attributes.updatedAt
+				+ "</td><td>" + application[r].attributes.course
+				+ "</td></tr>");
 		});
 	} catch (error) {
 		alert(`Failed to retrieve the object, with error code: ${error.message}`);
@@ -368,4 +368,33 @@ async function loadData() {
 	retrievePerson();
 	retrieveSupport();
 	retrieveFeedback();
+}
+
+//Save Subscribers
+async function saveNewComment() {
+	if (document.getElementById("name").value != null && document.getElementById("name").value != '') {
+		if (document.getElementById("mail").value != null && document.getElementById("mail").value != '') {
+			if (document.getElementById("comment").value != null && document.getElementById("comment").value != '') {
+				const comment = new Parse.Object("Comment");
+				comment.set("name", document.getElementById("name").value);
+				comment.set("mail", document.getElementById("mail").value);
+				comment.set("comment", document.getElementById("comment").value);
+				try {
+					let result = await comment.save()
+					document.getElementById("name").value = '';
+					document.getElementById("mail").value = '';
+					document.getElementById("comment").value = '';
+					document.getElementById("response").innerHTML = 'Thanks for reading the blog and dropping your comment';
+				} catch (error) {
+					document.getElementById("response").innerHTML = 'You comment was not submitted.';
+				}
+			}else {
+				document.getElementById("comment").innerHTML = 'No comment entered';
+			}
+		}else {
+			document.getElementById("mail").innerHTML = 'No mail entered';
+		}
+	}else {
+		document.getElementById("name").innerHTML = 'No full name entered';
+	}
 }
