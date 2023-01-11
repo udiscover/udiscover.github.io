@@ -246,7 +246,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 mb-4">
-          <img src="images/blog/blog-single.jpg" alt="blog-thumb" class="img-fluid w-100">
+          <img src="images/blog/post1.jpg" alt="blog-thumb" class="img-fluid w-100">
         </div>
         <div class="col-12">
           <ul class="list-inline">
@@ -279,6 +279,9 @@
             asked to make a match winning team. To help you out, you have a bad selection committee, your team’s coach,
             coaching the team from the past 20 years, and one of the lowest budgets approved, and ofcourse you are a
             data scientist. To make things more interesting, say the game is baseball. </p>
+            <div class="col-12 mb-4">
+              <img src="images/blog/post1-1.jpg" alt="blog-thumb" class="img-fluid w-100">
+            </div>
           <p>Billy Beane, the general manager of the Oakland Athletics, was devastated by the team's loss to the New
             York Yankees in the 2001 American League Division Series. With the impending departure of the star players
             Johnny Damon, Jason Giambi and Jason Isringhausen to free agency, Beane needed to assemble a competitive
@@ -286,17 +289,19 @@
           <p>During a scouting visit to the Cleveland Indians, he met Peter Brand, a young Yale economics graduate with
             radical ideas about evaluating players. Yes, using data points, statistics, charts, numbers!</p>
           <p>And rest is history!!
-            The world got “sabermetrics” method, the future of baseball now used for all games.
+            The world got "<b>sabermetrics</b>" method, the future of baseball now used for all games.
           </p>
           <p>And now how do you feel vs when I was giving you the situation. New ideas, new ways and who knows your
             story may be the next for my blogs.
 
             This story is available in the book and the movie form:
             Moneyball: The Art of Winning an Unfair Game</p>
+            <p>Its the visualizations of data, proper correlations, graphs and metrics and understanding 
+              the data which may lead to unique visions which are more accurate and helpful.<br>Happy Learning!!!</p>
         </div>
         <!-- comment box -->
         <div class="col-12">
-          <form action="#" class="row">
+          <form class="row">
             <div class="col-sm-6">
               <input type="text" class="form-control mb-4" id="name" name="name" placeholder="Full Name" required>
             </div>
@@ -308,7 +313,8 @@
                 required></textarea>
             </div>
             <div class="col-12">
-              <button type="submit" value="send" class="btn btn-primary">post comment</button>
+              <button type="button" value="send" class="btn btn-primary" onclick="saveNewComment()">post comment</button>
+              <p id="response"></p>
             </div>
           </form>
         </div>
