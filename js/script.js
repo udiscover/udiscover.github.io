@@ -398,3 +398,8 @@ async function saveNewComment() {
 		document.getElementById("name").innerHTML = 'No full name entered';
 	}
 }
+
+function copyText(text) {
+	navigator.clipboard.writeText(text);
+	alert('URL copied');
+}
