@@ -401,5 +401,5 @@ async function saveNewComment() {
 
 function copyText(text) {
 	navigator.clipboard.writeText(text);
-	alert('URL copied');
+	alert('URL copied to clipboard');
 }
