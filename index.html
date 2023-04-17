@@ -60,7 +60,7 @@
   </script>
 </head>
 
-<body>
+<body onload="checkLoggedInUser()">
   <!-- preloader start -->
   <div class="preloader">
     <img src="images/preloader.gif" alt="preloader">
@@ -114,6 +114,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="about.html">About Us</a></li>
                   <li><a class="dropdown-item" href="teacher.html">Our Teachers</a></li>
+                  <li><a class="dropdown-item" href="contact.html">Contact</a></li>
                   <li><a class="dropdown-item" href="privacypolicy.html">Privacy Policy</a></li>
                   <li><a class="dropdown-item" href="termsandconditions.html">Terms & Conditions</a></li>
                 </ul>
@@ -156,9 +157,16 @@
                 </li>
               </ul>
             </li-->
-              <li class="nav-item @@contact">
-                <a class="nav-link" href="contact.html">CONTACT</a>
-              </li>
+            <li class="nav-item dropdown view @@profile" id="profileMenu">
+              <a class="nav-link dropdown-toggle" href="profile.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Profile
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#loginModal" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                <li><a class="dropdown-item" href="#signupModal" data-toggle="modal" data-target="#signupModal">Register</a></li>
+                
+              </ul>
+            </li>
             </ul>
           </div>
         </nav>
@@ -180,13 +188,16 @@
           <div class="login">
             <form action="#" class="row">
               <div class="col-12">
-                <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Contact No.">
               </div>
               <div class="col-12">
                 <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
               </div>
               <div class="col-12">
                 <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+              </div>
+              <div class="col-12">
+                <input type="email" class="form-control mb-3" id="signupCourse" name="signupCourse" placeholder="Course">
               </div>
               <div class="col-12">
                 <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword"
@@ -212,19 +223,17 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="#" class="row">
+          <form class="row">
             <div class="col-12">
-              <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+              <input type="text" class="form-control mb-3" id="loginUsername" name="loginUsername" placeholder="Username">
             </div>
-            <div class="col-12">
-              <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
-            </div>
+            
             <div class="col-12">
               <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword"
                 placeholder="Password">
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-primary">LOGIN</button>
+              <input type="button" class="btn btn-primary" onclick="doUserLogIn()">LOGIN</button>
             </div>
           </form>
         </div>

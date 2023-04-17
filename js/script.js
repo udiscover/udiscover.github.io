@@ -388,13 +388,13 @@ async function saveNewComment() {
 				} catch (error) {
 					document.getElementById("response").innerHTML = 'You comment was not submitted.';
 				}
-			}else {
+			} else {
 				document.getElementById("comment").innerHTML = 'No comment entered';
 			}
-		}else {
+		} else {
 			document.getElementById("mail").innerHTML = 'No mail entered';
 		}
-	}else {
+	} else {
 		document.getElementById("name").innerHTML = 'No full name entered';
 	}
 }
@@ -402,4 +402,48 @@ async function saveNewComment() {
 function copyText(text) {
 	navigator.clipboard.writeText(text);
 	alert('URL copied to clipboard');
+}
+
+const doUserLogIn = async function () {
+	const usernameValue = document.getElementById('loginUsername').value;
+	const passwordValue = document.getElementById('loginPassword').value;
+	return await Parse.User.logIn(usernameValue, passwordValue)
+		.then(async (loggedInUser) => {
+			const currentUser = await Parse.User.currentAsync();
+			if (loggedInUser === currentUser) {
+				window.location.href = "./profile.html";
+			}
+			return true;
+		})
+		.catch((error) => {
+			console.log('Error! ' + error.message);
+			return false;
+		});
+};
+
+const checkLoggedInUser = async function () {
+	const currentUser = await Parse.User.currentAsync();
+	if (currentUser != null) {
+		document.getElementById('profileMenu').innerHTML = '<a class="nav-link" href="profile.html">Profile</a>';
+	}
+}
+
+const checkProfileLoggedInUser = async function () {
+	const currentUser = await Parse.User.currentAsync();
+	if (currentUser != null) {
+		document.getElementById('profileMenu').innerHTML = '<a class="nav-link" href="profile.html">Profile</a>';
+	}else{
+		window.location.href = "./index.html";
+	}
+}
+
+const doUserLogOut = async function () {
+	return await Parse.User.logOut().then(async () => {
+		const currentUser = await Parse.User.currentAsync();
+		if (currentUser === null) {
+			console.log('Success! You have been loggedout.');
+			window.location.href = "./index.html";
+		}
+		return true;
+	});
 }
