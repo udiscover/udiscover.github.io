@@ -386,7 +386,7 @@ async function saveNewComment() {
 					document.getElementById("comment").value = '';
 					document.getElementById("response").innerHTML = 'Thanks for reading the blog and dropping your comment';
 				} catch (error) {
-					document.getElementById("response").innerHTML = 'You comment was not submitted.';
+					document.getElementById("response").innerHTML = 'Your comment was not submitted.';
 				}
 			} else {
 				document.getElementById("comment").innerHTML = 'No comment entered';
@@ -432,7 +432,7 @@ const checkProfileLoggedInUser = async function () {
 	const currentUser = await Parse.User.currentAsync();
 	if (currentUser != null) {
 		document.getElementById('profileMenu').innerHTML = '<a class="nav-link" href="profile.html">Profile</a>';
-	}else{
+	} else {
 		window.location.href = "./index.html";
 	}
 }
@@ -448,19 +448,43 @@ const doUserLogOut = async function () {
 	});
 }
 
-const doUserRegistration = async function () {
-	const usernameValue = document.getElementById('loginUsername').value;
-	const passwordValue = document.getElementById('loginPassword').value;
-	return await Parse.User.logIn(usernameValue, passwordValue)
-		.then(async (loggedInUser) => {
-			const currentUser = await Parse.User.currentAsync();
-			if (loggedInUser === currentUser) {
-				window.location.href = "./profile.html";
+async function doUserRegistration() {
+	if (document.getElementById("signupPhone").value != null && document.getElementById("signupPhone").value != '') {
+		if (document.getElementById("signupName").value != null && document.getElementById("signupName").value != '') {
+			if (document.getElementById("signupEmail").value != null && document.getElementById("signupEmail").value != '') {
+				if (document.getElementById("signupPassword").value != null && document.getElementById("signupPassword").value != '') {
+					const signUpPhoneValue = document.getElementById('signupPhone').value;
+					const signupNameValue = document.getElementById('signupName').value;
+					const signupEmailValue = document.getElementById('signupEmail').value;
+					const signupPasswordValue = document.getElementById('signupPassword').value;
+
+					const user = new Parse.Object("User");
+					user.set("contact", signUpPhoneValue);
+					user.set("fullname", signupNameValue);
+					user.set("username", signupEmailValue);
+					user.set("email", signupEmailValue);
+					user.set("password", signupPasswordValue);
+					try {
+						let result = await user.save()
+						document.getElementById("signupPhone").value = '';
+						document.getElementById("signupName").value = '';
+						document.getElementById("signupEmail").value = '';
+						document.getElementById("signupPassword").value = '';
+						document.getElementById("registrationResponse").innerHTML = 'Your registration is complete.';
+					} catch (error) {
+						document.getElementById("registrationResponse").innerHTML = 'Your registration did not complete.';
+					}
+
+				} else {
+					document.getElementById("registrationResponse").innerHTML = 'The password is not correct.';
+				}
+			} else {
+				document.getElementById("registrationResponse").innerHTML = 'The email entered is not correct.';
 			}
-			return true;
-		})
-		.catch((error) => {
-			console.log('Error! ' + error.message);
-			return false;
-		});
+		} else {
+			document.getElementById("registrationResponse").innerHTML = 'The name entered is not correct.';
+		}
+	} else {
+		document.getElementById("registrationResponse").innerHTML = 'The contact no. entered is not correct.';
+	}
 };
