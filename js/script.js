@@ -432,6 +432,11 @@ const checkProfileLoggedInUser = async function () {
 	const currentUser = await Parse.User.currentAsync();
 	if (currentUser != null) {
 		document.getElementById('profileMenu').innerHTML = '<a class="nav-link" href="profile.html">Profile</a>';
+		document.getElementById('fullName').innerHTML = currentUser.attributes.fullname;
+		document.getElementById('emailId').innerHTML = currentUser.attributes.email;
+		document.getElementById('userName').innerHTML = currentUser.attributes.username;
+		document.getElementById('contactNo').innerHTML = currentUser.attributes.contact;
+		document.getElementById('address').innerHTML = currentUser.attributes.address;
 	} else {
 		window.location.href = "./index.html";
 	}
