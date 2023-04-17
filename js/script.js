@@ -447,3 +447,20 @@ const doUserLogOut = async function () {
 		return true;
 	});
 }
+
+const doUserRegistration = async function () {
+	const usernameValue = document.getElementById('loginUsername').value;
+	const passwordValue = document.getElementById('loginPassword').value;
+	return await Parse.User.logIn(usernameValue, passwordValue)
+		.then(async (loggedInUser) => {
+			const currentUser = await Parse.User.currentAsync();
+			if (loggedInUser === currentUser) {
+				window.location.href = "./profile.html";
+			}
+			return true;
+		})
+		.catch((error) => {
+			console.log('Error! ' + error.message);
+			return false;
+		});
+};
