@@ -458,23 +458,24 @@ async function doUserRegistration() {
 					const signupEmailValue = document.getElementById('signupEmail').value;
 					const signupPasswordValue = document.getElementById('signupPassword').value;
 
-					const user = new Parse.Object("User");
+					const user = new Parse.User();
 					user.set("contact", signUpPhoneValue);
 					user.set("fullname", signupNameValue);
 					user.set("username", signupEmailValue);
 					user.set("email", signupEmailValue);
 					user.set("password", signupPasswordValue);
 					try {
-						let result = await user.save()
+						await user.signUp();
+
 						document.getElementById("signupPhone").value = '';
 						document.getElementById("signupName").value = '';
 						document.getElementById("signupEmail").value = '';
 						document.getElementById("signupPassword").value = '';
 						document.getElementById("registrationResponse").innerHTML = 'Your registration is complete.';
 					} catch (error) {
+						console.log(error);
 						document.getElementById("registrationResponse").innerHTML = 'Your registration did not complete.';
 					}
-
 				} else {
 					document.getElementById("registrationResponse").innerHTML = 'The password is not correct.';
 				}
