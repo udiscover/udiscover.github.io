@@ -1,5 +1,5 @@
 /**
- * WEBSITE: https://dvision.academy
+ * WEBSITE: https://udiscover.in
  * FACEBOOK: https://www.facebook.com/datavisionacademy
  */
 
